@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extentreports>
+    <configuration>
+        <!-- Report theme -->
+        <!-- Available themes: STANDARD, DARK -->
+        <theme>STANDARD</theme>
+
+        <!-- Document encoding -->
+        <!-- Default encoding is UTF-8 -->
+        <encoding>UTF-8</encoding>
+
+        <!-- Protocol for resources like CSS and JS -->
+        <!-- Allowed values: HTTP, HTTPS (default) -->
+        <protocol>HTTPS</protocol>
+
+        <!-- Title of the document -->
+        <documentTitle>Ibrahim Anifowoshe - Software QA Engineer Portfolio</documentTitle>
+
+        <!-- Report name - displayed at top-nav -->
+        <reportName>IA Portfolio - Test Report</reportName>
+
+        <!-- Report head line -->
+        <reportHeadline>Test Results</reportHeadline>
+
+        <!-- Global date format override -->
+        <!-- Default date format: yyyy-MM-dd -->
+        <dateFormat>yyyy-MM-dd</dateFormat>
+
+        <!-- Global time format override -->
+        <!-- Default time format: HH:mm:ss -->
+        <timeFormat>HH:mm:ss</timeFormat>
+
+        <!-- Set timeStampFormat -->
+        <timeStampFormat>yyyy-MM-dd HH:mm:ss</timeStampFormat>
+
+        <!-- Add custom CSS -->
+        <css>
+            .report-name { font-size: 25px; }
+        </css>
+
+        <!-- Add custom JavaScript -->
+        <js>
+            console.log('Hello, Extent!');
+        </js>
+    </configuration>
+</extentreports>
