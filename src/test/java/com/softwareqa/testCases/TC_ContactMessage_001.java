@@ -35,12 +35,12 @@ public class TC_ContactMessage_001 extends BaseClass {
                 logger.info("Contact message test passed");
             } else {
                 logger.error("Contact message test failed. Expected: '" + expectedMessage + "' but got: '" + actualMessage + "'");
-                captureScreen(driver, "SendContactMessageTest"); // Take a screenshot if the message is not as expected
+                captureScreen(driver, "sendContactMessageTest"); // Take a screenshot if the message is not as expected
                 Assert.fail("Contact message test failed. Expected: '" + expectedMessage + "' but got: '" + actualMessage + "'");
             }
         } catch (Exception e) {
             logger.error("Contact message test failed - " + e.getMessage());
-            captureScreen(driver, "SendContactMessageTest");
+            captureScreen(driver, "sendContactMessageTest");
 
             // Throw AssertionError with the message from the exception
             throw new AssertionError("Contact message test failed - " + e.getMessage());

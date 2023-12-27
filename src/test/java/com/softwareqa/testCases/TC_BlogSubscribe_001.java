@@ -38,11 +38,11 @@ public class TC_BlogSubscribe_001 extends BaseClass{
                 logger.info("Blog subscribe test passed");
             } else {
                 logger.error("Blog subscribe test failed. Expected: '" + expectedMessage + "' but got: '" + actualMessage + "'");
-                captureScreen(driver, "BlogSubscribeTest"); // Take a screenshot if the message is not as expected
+                captureScreen(driver, "blogSubscribeTest"); // Take a screenshot if the message is not as expected
                 Assert.fail("Blog subscribe test failed. Expected: '" + expectedMessage + "' but got: '" + actualMessage + "'");
             }
         } catch (AssertionError e) {
-            captureScreen(driver, "BlogSubscribeTest");
+            captureScreen(driver, "blogSubscribeTest");
             logger.error("Blog subscribe test failed", e);
             throw e; // Rethrow the exception to ensure the test is marked as failed
         }
