@@ -14,10 +14,10 @@
         <protocol>HTTPS</protocol>
 
         <!-- Title of the document -->
-        <documentTitle>Ibrahim Anifowoshe - Software QA Engineer Portfolio</documentTitle>
+        <documentTitle>NOP Commerce</documentTitle>
 
         <!-- Report name - displayed at top-nav -->
-        <reportName>IA Portfolio - Test Report</reportName>
+        <reportName>NOP Commerce - Test Report</reportName>
 
         <!-- Report head line -->
         <reportHeadline>Test Results</reportHeadline>
@@ -35,7 +35,14 @@
 
         <!-- Add custom CSS -->
         <css>
-            .report-name { font-size: 25px; }
+            .report-header {
+                text-align: left;
+            }
+
+            .report-steps {
+                font-size: small;
+                text-align: left;
+            }
         </css>
 
         <!-- Add custom JavaScript -->
