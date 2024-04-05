@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name="Software_QA_Engineer">
+<suite name="NOP Commerce">
     <listeners>
-        <listener class-name="com.softwareqa.utilities.Reporting" />
+        <listener class-name="com.nopcommerce.utilities.Reporting" />
     </listeners>
-    <test name="Software QA Portfolio Test">
-        <parameter name="browser" value="chrome">
+    <test name="NOP Commerce Test">
+        <parameter name="browser" value="chrome" />
+        <parameter name="headless" value="true" />
             <classes>
-                <class name="com.softwareqa.testCases.TC_ContactMessage_001" />
-                <class name="com.softwareqa.testCases.TC_BlogSubscribe_001" />
+                <class name="com.nopcommerce.testCases.TC_Homepage">
+                    <methods>
+                        <include name="homepageTest" />
+                    </methods>
+                </class>
             </classes>
-        </parameter>
     </test>
 </suite>

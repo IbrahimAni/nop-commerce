@@ -1,4 +1,4 @@
-package com.softwareqa.utilities;
+package com.nopcommerce.utilities;
 
 import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.xssf.usermodel.XSSFCell;

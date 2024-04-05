@@ -1,3 +1,3 @@
-cd C:\Users\User\Documents\GitHub\qa-selenium-framework
+cd C:\Users\User\AquaProjects\nop-commerce
 mvn clean install
 pause
