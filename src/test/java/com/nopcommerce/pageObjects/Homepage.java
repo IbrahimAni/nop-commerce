@@ -1,5 +1,6 @@
 package com.nopcommerce.pageObjects;
 
+import com.nopcommerce.utilities.locators.HomepageLocators;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
@@ -27,6 +28,10 @@ public class Homepage {
     @CacheLookup
     WebElement searchBtn;
 
+    @FindBy(how = How.XPATH, using = "//a[@class='ico-register']")
+    @CacheLookup
+    WebElement registerBtn;
+
     public void enterSearchItemValue(String searchValue){
         searchInputField.sendKeys(searchValue);
     }
@@ -37,5 +42,9 @@ public class Homepage {
 
     public WebElement isNopCommerceLogoIsVisible(){
         return nopCommerceLogo;
+    }
+
+    public void clickRegisterBtn(){
+        registerBtn.click();
     }
 }
