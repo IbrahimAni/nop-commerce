@@ -3,15 +3,28 @@
 
 <suite name="NOP Commerce">
     <listeners>
-        <listener class-name="com.nopcommerce.utilities.Reporting" />
+        <listener class-name="utilities.Reporting" />
     </listeners>
     <test name="NOP Commerce Test">
         <parameter name="browser" value="chrome" />
         <parameter name="headless" value="true" />
             <classes>
-                <class name="com.nopcommerce.testCases.TC_Homepage">
+                <class name="testCases.HomepageTest">
                     <methods>
                         <include name="homepageTest" />
+                    </methods>
+                </class>
+                <class name="testCases.RegisterPageTest">
+                    <methods>
+                        <include name="registerUserSuccessfully" />
+                        <include name="registerUserWithBlankPasswordField" />
+                        <include name="registerUserWithBlankConfirmPasswordField" />
+                        <include name="registerUserWithUnmatchingPassword" />
+                        <include name="registerUserWithShortPassword" />
+                        <include name="registerUserWithIncorrectEmailFormat" />
+                        <include name="registerUserWithExistingEmail" />
+                        <include name="registerUserWithBlankFirstnameField" />
+                        <include name="registerUserWithBlankLastnameField" />
                     </methods>
                 </class>
             </classes>

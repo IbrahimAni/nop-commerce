@@ -1,6 +1,5 @@
-package com.nopcommerce.pageObjects;
+package pageObjects;
 
-import com.nopcommerce.utilities.locators.HomepageLocators;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;

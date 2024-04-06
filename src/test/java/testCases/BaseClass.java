@@ -1,16 +1,13 @@
-package com.nopcommerce.testCases;
+package testCases;
 
-import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.Status;
-import com.nopcommerce.pageObjects.Homepage;
-import com.nopcommerce.pageObjects.SearchResultPage;
-import com.nopcommerce.utilities.Action;
-import com.nopcommerce.utilities.ReadConfig;
+import pageObjects.BasePage;
+import pageObjects.Homepage;
+import pageObjects.RegisterPage;
+import pageObjects.SearchResultPage;
+import testData.NewCustomerData;
+import utilities.ReadConfig;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.RandomStringUtils;
-import org.apache.http.HttpStatus;
-import org.apache.http.client.fluent.Request;
-import org.apache.http.client.fluent.Response;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.*;
@@ -31,13 +28,12 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import java.util.concurrent.TimeUnit;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 import javax.swing.*;
 
-public class BaseClass {
+public class BaseClass extends BasePage {
     ReadConfig readConfig = new ReadConfig();
     public String baseUrl = readConfig.getApplicationURL();
     public String username = readConfig.getUsername();
@@ -47,10 +43,7 @@ public class BaseClass {
     public WebDriverWait wait;
     public  List<String>reportLogMessage;
 
-    //Pages
-    Action action;
-    Homepage homepage;
-    SearchResultPage searchResultPage;
+    public NewCustomerData newCustomerData = new NewCustomerData();
 
     @Parameters({"browser", "headless"})
     @BeforeClass
@@ -89,7 +82,8 @@ public class BaseClass {
         }
 
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        driver.manage().window().setSize(new Dimension(1920, 1080));
+//        driver.manage().window().setSize(new Dimension(1920, 1080));
+        driver.manage().window().maximize();
         driver.get(baseUrl);
     }
 
@@ -98,28 +92,6 @@ public class BaseClass {
         driver.quit();
     }
 
-    public void captureScreen(WebDriver driver, String tname) throws IOException {
-        TakesScreenshot ts = (TakesScreenshot) driver;
-        File source = ts.getScreenshotAs(OutputType.FILE);
-        File target = new File(System.getProperty("user.dir")+"/Screenshots/"+tname+".png");
-        FileUtils.copyFile(source, target);
-        System.out.println("Screenshot taken");
-    }
-
-    public String randomString(){
-        return RandomStringUtils.randomAlphabetic(5);
-    }
-
-    public String randomNum(){
-        // Random number between 100000 and 999999
-        Random random = new Random();
-        int number = 100000 + random.nextInt(900000);
-        return String.valueOf(number);
-    }
-
-    public void scrollTo (WebElement element){
-        new Actions(driver).scrollToElement(element).perform();
-    }
 
     public void log(String message){
         logger.info(message);
